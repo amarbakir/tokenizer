@@ -1,0 +1,75 @@
+1.
+cmd input: “\t” “hello\tworld”
+You get: “\t” “hello\tworld”
+Output: hello
+world
+2.
+cmd input: “\t” “tttt\tttt”
+You get: “\t” “tttt\tttt”
+Output: ttt
+ttt
+3.
+cmd input: “t” “tttt\tttt”
+You get: “t” “tttt\tttt”
+Output: [0x09]
+4.
+cmd input: “e\v\t ” “hel\vlo \tworld”
+You get: “e\v\t ” “hel\vlo \tworld”
+Output: h
+l
+lo
+world
+5.
+cmd input: “” “\a”
+You get: “” “\a”
+Output: [0x07]
+6.
+cmd input: “\v” “”
+You get: “\v” “”
+Output:
+7.
+cmd input: “\b” “hello\bworld”
+You get: “\b” “hello\bworld”
+Output: hello
+world
+8.
+cmd input: “b” “hello\bworld”
+You get: “b” “hello\bworld”
+Output: hello
+world
+9.cmd input: “\\\\” “\\\\\\hello\\\\\\world\\\\”
+You get: “\\” “\\\hello\\\world\\”
+Output: hello
+world
+10.
+cmd input: “\b\le” “ShE sells sEa shells by the sEa shorE\\”
+You get: “\b\le” “ShE sells sEa shells by the sEa shorE\”
+Output: ShE s
+s sEa sh
+s by th
+ sEa shorE
+11.
+cmd input: “\a\\” “hello\\aworld”
+You get: “\a\” “hello\aworld”
+Output: hello
+world
+12.
+cmd input: “” “\\\””
+You get: “” “\””
+Output: [0x22]
+13.
+cmd input: “j” “jjjjjj”
+You get: “j” “jjjjjj”
+Output:
+14.
+cmd input: “” “\\\\\\”
+You get: “” “\\\”
+Output:
+15.
+cmd input: “” “\\\a\\\\”
+You get: “” “\\a\\”
+Output: [0x07]
+14.
+Too many arguments (argc > 3) => error
+15.
+Too few arguments (argc < 3) => error
